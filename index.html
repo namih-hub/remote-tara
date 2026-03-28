@@ -1,2 +1,617 @@
-<h1>太良から来ました</h1>
-<p>これは最初の公開ページです</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>太良リモートワークセンター | 佐賀県太良町から企業の業務を支援</title>
+  <style>
+    :root {
+      --bg: #f6f2ea;
+      --paper: rgba(255, 252, 247, 0.92);
+      --ink: #21312b;
+      --muted: #57665e;
+      --line: #d8d0bf;
+      --sea: #215a63;
+      --sea-deep: #163c44;
+      --sun: #d97a2b;
+      --leaf: #5f7d4d;
+      --sand: #efe3d0;
+      --accent-soft: #dcebed;
+      --shadow: 0 18px 40px rgba(22, 60, 68, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "BIZ UDPGothic", "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(217, 122, 43, 0.14), transparent 28%),
+        radial-gradient(circle at left 20%, rgba(33, 90, 99, 0.12), transparent 26%),
+        linear-gradient(180deg, #f9f5ee 0%, var(--bg) 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+
+    .hero,
+    .panel,
+    .card,
+    .pillars article,
+    .service-item,
+    .note {
+      background: var(--paper);
+      border: 1px solid rgba(216, 208, 191, 0.9);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      padding: 36px;
+      border-radius: 32px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(22, 60, 68, 0.96) 0%, rgba(33, 90, 99, 0.96) 52%, rgba(95, 125, 77, 0.95) 100%);
+      color: #f6f6f1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 244, 226, 0.24), transparent 66%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1.08;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
+      gap: 24px;
+      align-items: end;
+    }
+
+    .lead {
+      margin-top: 16px;
+      max-width: 720px;
+      line-height: 1.9;
+      font-size: 16px;
+      color: rgba(246, 246, 241, 0.92);
+    }
+
+    .hero-meta {
+      margin-top: 18px;
+      font-size: 13px;
+      color: rgba(242, 245, 240, 0.8);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 14px;
+    }
+
+    .stat {
+      padding: 18px 18px 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(246, 246, 241, 0.9);
+    }
+
+    section {
+      margin-top: 18px;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.2;
+      color: var(--sea-deep);
+      letter-spacing: 0.03em;
+    }
+
+    .section-lead {
+      margin-bottom: 18px;
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .panel,
+    .card {
+      border-radius: 26px;
+      padding: 24px;
+    }
+
+    .panel h3,
+    .card h3,
+    .pillars h3,
+    .service-item h3,
+    .note h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+      color: var(--sea-deep);
+    }
+
+    .panel p,
+    .panel li,
+    .card p,
+    .card li,
+    .pillars p,
+    .service-item p,
+    .note p,
+    .note li {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .pillars article,
+    .service-item,
+    .note {
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--sea);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-item {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 252, 247, 0.96)),
+        var(--paper);
+    }
+
+    .service-item small {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--sun);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .audience {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .audience .card {
+      min-height: 100%;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--sand);
+      color: var(--sea-deep);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .flow-step {
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fffdf8 0%, #f3eee4 100%);
+      border: 1px solid var(--line);
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--sun);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+    }
+
+    .cta {
+      margin-top: 18px;
+      padding: 28px;
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(217, 122, 43, 0.92) 0%, rgba(181, 98, 25, 0.94) 100%);
+      color: #fff8ef;
+      box-shadow: 0 18px 40px rgba(181, 98, 25, 0.16);
+    }
+
+    .cta p {
+      margin-top: 10px;
+      line-height: 1.85;
+      color: rgba(255, 248, 239, 0.92);
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 16px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .contact a {
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 248, 239, 0.38);
+    }
+
+    .footnote {
+      margin-top: 14px;
+      font-size: 12px;
+      color: rgba(255, 248, 239, 0.82);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .pillars,
+      .service-list,
+      .audience,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 20px, 1160px);
+        padding-top: 14px;
+        padding-bottom: 32px;
+      }
+
+      .hero,
+      .panel,
+      .card,
+      .pillars article,
+      .service-item,
+      .note,
+      .cta {
+        border-radius: 22px;
+      }
+
+      .hero,
+      .panel,
+      .card,
+      .pillars article,
+      .service-item,
+      .note,
+      .cta {
+        padding: 20px;
+      }
+
+      .contact {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">SAGA TARA REMOTE WORK CENTER</div>
+          <h1>太良町から、都市部企業の仕事を支える。</h1>
+          <p class="lead">
+            太良リモートワークセンター（仮称）は、首都圏・関西・福岡企業の業務を、佐賀県太良町から支援する構想です。
+            地方の人材と都市部の仕事をつなぎ、安心して発注できる業務体制と、太良町で働き続けられる選択肢の両立を目指します。
+          </p>
+          <p class="hero-meta">説明資料作成日: 2026年3月23日 / 発案・連絡先: 太良映画監督 川浪秀之</p>
+        </div>
+        <div class="hero-side">
+          <div class="stat">
+            <strong>企業支援</strong>
+            <span>データ入力、資料整理、EC支援、SNS運用、コンテンツ制作補助などを想定しています。</span>
+          </div>
+          <div class="stat">
+            <strong>地域就業</strong>
+            <span>農漁業従事者、主婦、学生、既存リモートワーカーが働き方を広げられる仕組みを目指します。</span>
+          </div>
+          <div class="stat">
+            <strong>構想段階</strong>
+            <span>登録者あたり月2万円規模のワーク提供を一つの目安に、継続案件の仕組み化を検討しています。</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="grid-2">
+        <article class="panel">
+          <span class="kicker">MISSION</span>
+          <h3>私たちの役割</h3>
+          <p>
+            太良リモートワークセンターは、都市部の企業が抱える「人手不足」「コスト負担」「作業の偏り」を、
+            地方人材による安心・高品質な業務アウトソーシングで支えることを目指しています。
+          </p>
+        </article>
+        <article class="panel">
+          <span class="kicker">VISION</span>
+          <h3>太良でリモートワークライフを実現する</h3>
+          <p>
+            農業収入に加えた副収入、子育てと両立できる仕事、学業と並行できる就業機会など、
+            太良町の暮らしに合った働き方を増やすことを目標にしています。
+          </p>
+          <div class="badge-row">
+            <span class="badge">農業収入 + リモート収入</span>
+            <span class="badge">子育て + 在宅ワーク</span>
+            <span class="badge">学生の仕事機会</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">提供できる業務</h2>
+      <p class="section-lead">
+        企業ごとに必要な業務を切り出し、必要なときに必要な分だけ依頼できる体制を想定しています。
+      </p>
+      <div class="service-list">
+        <article class="service-item">
+          <small>01</small>
+          <h3>データ入力・資料整理</h3>
+          <p>請求書、顧客リスト、各種入力作業など、定型的なバックオフィス業務を支援します。</p>
+        </article>
+        <article class="service-item">
+          <small>02</small>
+          <h3>コンテンツ制作補助</h3>
+          <p>記事作成、文字起こし、翻訳サポートなど、情報発信や制作の下支えとなる業務を担います。</p>
+        </article>
+        <article class="service-item">
+          <small>03</small>
+          <h3>EC業務支援</h3>
+          <p>商品登録、画像加工、在庫リスト整備など、EC運営に必要な実務をサポートします。</p>
+        </article>
+        <article class="service-item">
+          <small>04</small>
+          <h3>SNS運用サポート</h3>
+          <p>投稿作成、簡単な画像編集、数値分析の補助など、継続運用に必要な作業を支援します。</p>
+        </article>
+        <article class="service-item">
+          <small>05</small>
+          <h3>デザイン・クリエイティブ</h3>
+          <p>バナーリサイズや簡易編集など、日常運用の中で発生するクリエイティブ業務にも対応します。</p>
+        </article>
+        <article class="service-item">
+          <small>06</small>
+          <h3>柔軟な業務切り出し</h3>
+          <p>定型業務の一部委託から継続案件まで、内容と頻度に応じて体制を組める構想です。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">この構想が向いている相手</h2>
+      <div class="audience">
+        <article class="card">
+          <span class="kicker">FOR COMPANY</span>
+          <h3>発注企業のみなさまへ</h3>
+          <ul>
+            <li>人手不足や作業の偏りを解消したい</li>
+            <li>都市部品質を保ちながらコストを抑えたい</li>
+            <li>繁閑に合わせて必要な分だけ外部発注したい</li>
+            <li>地方雇用の創出につながる取り組みを進めたい</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="kicker">FOR LOCAL PEOPLE</span>
+          <h3>太良町で働く人・これから働きたい人へ</h3>
+          <ul>
+            <li>農漁業の繁閑に合わせて収入源を広げたい方</li>
+            <li>子育てと両立できる働き方を探している方</li>
+            <li>大学生・専門学校生の仕事機会を増やしたい方</li>
+            <li>すでにリモートワークをしている町外の方で、太良への移住や滞在に関心がある方</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">選ばれる理由</h2>
+      <div class="pillars">
+        <article>
+          <h3>首都圏品質 × 地方コスト</h3>
+          <p>都市部よりコストを抑えながら、品質保証を意識した体制づくりを目指しています。</p>
+        </article>
+        <article>
+          <h3>柔軟に依頼できる</h3>
+          <p>必要な時期に必要な業務だけを依頼しやすい、扱いやすい窓口を想定しています。</p>
+        </article>
+        <article>
+          <h3>レビューと納期管理</h3>
+          <p>ディレクションとレビュー体制を備え、継続的に信頼を積み上げる運営を目指します。</p>
+        </article>
+        <article>
+          <h3>地域への還元</h3>
+          <p>地方雇用の創出につながり、CSRやESGの文脈でも意味を持つ取り組みとして育てていきます。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid-2">
+        <article class="note">
+          <h3>太良町で働く側のメリット</h3>
+          <ul>
+            <li>快適な自然環境のなかで働ける</li>
+            <li>家賃など生活経費を抑えやすい</li>
+            <li>リモートワークを続けながら農業に従事できる</li>
+            <li>仕事の選択肢を増やし、やり直しの不安を減らせる</li>
+          </ul>
+        </article>
+        <article class="note">
+          <h3>いま見えている課題</h3>
+          <ul>
+            <li>継続的に仕事が入ってくる仕組みづくり</li>
+            <li>案件受注先の開拓と企業との接点づくり</li>
+            <li>登録促進と人材確保の方法設計</li>
+            <li>スキルアップの支援体制づくり</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">構想イメージ</h2>
+      <p class="section-lead">
+        リモートワーク案件の受注と地域人材の育成を両輪で進め、無理のない形で継続案件へつなげていく想定です。
+      </p>
+      <div class="flow">
+        <article class="flow-step">
+          <strong>STEP 1</strong>
+          <p>首都圏・関西・福岡の企業から、切り出し可能な業務を受注します。</p>
+        </article>
+        <article class="flow-step">
+          <strong>STEP 2</strong>
+          <p>太良町民、農漁業従事者、主婦、学生などへ案件をつなぎ、必要に応じてレビューします。</p>
+        </article>
+        <article class="flow-step">
+          <strong>STEP 3</strong>
+          <p>継続発注の仕組みをつくり、登録者あたり月2万円規模の仕事提供を一つの目標として育てます。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">発注企業様への特典案</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>特産品特典</h3>
+          <p>年間契約企業様へ、太良みかん・竹崎カニ・牡蠣・海苔など、太良町の特産品を季節ごとに届ける案があります。</p>
+        </article>
+        <article class="card">
+          <h3>社員向け購入特典</h3>
+          <p>特産品を社員価格で購入できる仕組みを用意し、地域とのつながりを感じられる関係づくりを目指します。</p>
+        </article>
+        <article class="card">
+          <h3>旅行・滞在特典</h3>
+          <p>太良町の旅館や宿泊施設の割引利用を通じて、社員旅行や家族旅行にも活用できる可能性があります。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>お問い合わせ・ご相談</h2>
+      <p>
+        太良リモートワークセンター構想に関するご相談、企業連携のご提案、地域での協力体制についてのお問い合わせは、
+        下記までご連絡ください。
+      </p>
+      <div class="contact">
+        <span>太良映画監督 川浪秀之</span>
+        <a href="tel:08069938219">080-6993-8219</a>
+        <a href="mailto:Kawanami.h@gmail.com">Kawanami.h@gmail.com</a>
+      </div>
+      <p class="footnote">本ページは、2026年3月23日時点の説明資料をもとに構成した掲載用ドラフトです。</p>
+    </section>
+  </div>
+</body>
+</html>
