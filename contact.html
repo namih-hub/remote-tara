@@ -1,25 +1,437 @@
-<h1>お問い合わせ</h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | 太良リモートワークセンター</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --paper: #fffdfa;
+      --ink: #4f443d;
+      --muted: #7b6f67;
+      --line: #f2ddd0;
+      --sea: #ff9447;
+      --sea-deep: #f27a2d;
+      --sun: #ffab63;
+      --leaf: #7dc34d;
+      --shadow: 0 18px 40px rgba(242, 122, 45, 0.10);
+    }
 
-<form>
-  <p>
-    <label>お名前<br>
-      <input type="text" name="name">
-    </label>
-  </p>
+    * { box-sizing: border-box; }
 
-  <p>
-    <label>メールアドレス<br>
-      <input type="email" name="email">
-    </label>
-  </p>
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "BIZ UDPGothic", "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(255, 171, 99, 0.14), transparent 24%),
+        radial-gradient(circle at left 20%, rgba(125, 195, 77, 0.10), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #fffdfa 100%);
+    }
 
-  <p>
-    <label>お問い合わせ内容<br>
-      <textarea name="message" rows="6"></textarea>
-    </label>
-  </p>
+    a { color: inherit; }
 
-  <p>
-    <button type="submit">送信する</button>
-  </p>
-</form>
+    .wrap {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+
+    .hero,
+    .card,
+    .cta {
+      background: var(--paper);
+      border: 1px solid rgba(216, 208, 191, 0.9);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      padding: 36px;
+      border-radius: 32px;
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(circle at top center, rgba(125, 195, 77, 0.12), transparent 34%),
+        linear-gradient(180deg, #fffefa 0%, #fff8f2 100%);
+      color: var(--ink);
+      text-align: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 171, 99, 0.16), transparent 66%);
+    }
+
+    .brandbar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .global-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    .global-nav a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--sea-deep);
+      border: 1px solid #f5dccd;
+      background: #fff5ed;
+      box-shadow: 0 6px 16px rgba(242, 122, 45, 0.08);
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand-mark {
+      width: 170px;
+      height: 170px;
+      border-radius: 36px;
+      object-fit: cover;
+      background: #ffffff;
+      border: 1px solid rgba(242, 122, 45, 0.16);
+      box-shadow: 0 18px 36px rgba(242, 122, 45, 0.14);
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 4px;
+    }
+
+    .brand-copy strong {
+      font-size: 38px;
+      line-height: 1.2;
+      letter-spacing: 0.04em;
+      color: var(--sea-deep);
+    }
+
+    .brand-copy span {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      color: #91ab71;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #f4ddcf;
+      background: #fff4ea;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--sea-deep);
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(24px, 3.6vw, 40px);
+      line-height: 1.08;
+      letter-spacing: 0.04em;
+      text-align: center;
+      color: var(--sea-deep);
+    }
+
+    .lead {
+      margin: 16px auto 0;
+      max-width: 760px;
+      line-height: 1.9;
+      font-size: 16px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    section { margin-top: 18px; }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .card,
+    .social-panel,
+    .form-panel {
+      border-radius: 26px;
+      padding: 24px;
+      text-align: center;
+      background: var(--paper);
+      border: 1px solid rgba(216, 208, 191, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.2;
+      color: var(--sea-deep);
+      letter-spacing: 0.03em;
+      text-align: center;
+    }
+
+    .card p,
+    .social-panel p,
+    .form-panel p {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 14px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 18px;
+      margin-top: 16px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .contact a {
+      text-decoration: none;
+      border-bottom: 1px solid rgba(242, 122, 45, 0.28);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 120px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #ffab63 0%, #7dc34d 100%);
+      box-shadow: 0 10px 20px rgba(242, 122, 45, 0.16);
+    }
+
+    .social-note,
+    .form-note {
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #9a8a80;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--sea-deep);
+      text-align: left;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .contact-form textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 18px;
+      font: inherit;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, #ffab63 0%, #f27a2d 100%);
+      cursor: pointer;
+    }
+
+    @media (max-width: 980px) {
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 20px, 1160px);
+        padding-top: 14px;
+        padding-bottom: 32px;
+      }
+
+      .hero,
+      .card,
+      .social-panel,
+      .form-panel {
+        border-radius: 22px;
+        padding: 20px;
+      }
+
+      .global-nav {
+        width: 100%;
+      }
+
+      .global-nav a,
+      .social-link,
+      .contact-form button {
+        width: 100%;
+      }
+
+      .contact {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="brandbar">
+        <nav class="global-nav" aria-label="グローバルメニュー">
+          <a href="index.html">トップ</a>
+          <a href="company.html">発注企業の皆さまへ</a>
+          <a href="remote-workers.html">リモートワークを希望する方へ</a>
+          <a href="contact.html">お問い合わせ</a>
+        </nav>
+        <a class="brand" href="index.html">
+          <img class="brand-mark" src="logo.jpg" alt="太良リモートワークセンターのロゴ">
+          <span class="brand-copy">
+            <strong>太良リモートワークセンター</strong>
+            <span>TARA REMOTE WORK CENTER</span>
+          </span>
+        </a>
+      </div>
+      <div class="eyebrow">CONTACT</div>
+      <h1>お問い合わせ</h1>
+      <p class="lead">
+        太良リモートワークセンター構想に関するご相談、企業連携のご提案、地域での協力体制についてのご相談は、
+        こちらからお気軽にご連絡ください。
+      </p>
+    </header>
+
+    <section class="card">
+      <h2 class="section-title">ご連絡先</h2>
+      <div class="contact">
+        <span>太良映画監督 川浪秀之</span>
+        <a href="tel:08069938219">080-6993-8219</a>
+        <a href="mailto:Kawanami.h@gmail.com">Kawanami.h@gmail.com</a>
+      </div>
+    </section>
+
+    <section class="cta-grid">
+      <div class="social-panel">
+        <h2 class="section-title">SNS</h2>
+        <p>最新情報の発信や今後の活動紹介に向けて、SNS導線も設置しています。</p>
+        <div class="social-links">
+          <a class="social-link" href="#" aria-label="Facebook">Facebook</a>
+          <a class="social-link" href="#" aria-label="X">X</a>
+          <a class="social-link" href="#" aria-label="Instagram">Instagram</a>
+        </div>
+        <p class="social-note">SNSリンク先は仮設定です。公開前に公式アカウントURLへ差し替えてください。</p>
+      </div>
+      <div class="form-panel">
+        <h2 class="section-title">お問い合わせフォーム</h2>
+        <p>このフォームは送信時にメールソフトを開きます。内容確認後、そのまま送信できます。</p>
+        <form class="contact-form" id="contact-form">
+          <label>
+            お名前
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            会社名・団体名
+            <input type="text" name="company" autocomplete="organization">
+          </label>
+          <label>
+            メールアドレス
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            お問い合わせ内容
+            <textarea name="message" required></textarea>
+          </label>
+          <button type="submit">メールで問い合わせる</button>
+        </form>
+        <p class="form-note">メール送信先: Kawanami.h@gmail.com</p>
+      </div>
+    </section>
+  </div>
+  <script>
+    const form = document.getElementById("contact-form");
+    if (form) {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const name = formData.get("name") || "";
+        const company = formData.get("company") || "";
+        const email = formData.get("email") || "";
+        const message = formData.get("message") || "";
+        const subject = encodeURIComponent("太良リモートワークセンターへのお問い合わせ");
+        const body = encodeURIComponent(
+          "お名前: " + name + "\n" +
+          "会社名・団体名: " + company + "\n" +
+          "メールアドレス: " + email + "\n\n" +
+          "お問い合わせ内容:\n" + message
+        );
+        window.location.href = "mailto:Kawanami.h@gmail.com?subject=" + subject + "&body=" + body;
+      });
+    }
+  </script>
+</body>
+</html>

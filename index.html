@@ -614,7 +614,7 @@
           <a href="index.html">トップ</a>
           <a href="company.html">発注企業の皆さまへ</a>
           <a href="remote-workers.html">リモートワークを希望する方へ</a>
-          <a href="#contact">お問い合わせ</a>
+          <a href="contact.html">お問い合わせ</a>
         </nav>
         <a class="brand" href="#top">
           <img class="brand-mark" src="logo.jpg" alt="太良リモートワークセンターのロゴ">
@@ -776,76 +776,14 @@
       </div>
     </section>
 
-    <section class="cta" id="contact">
-      <h2>お問い合わせ・ご相談</h2>
-      <p>
-        太良リモートワークセンター構想に関するご相談、企業連携のご提案、地域での協力体制についてのお問い合わせは、
-        下記までご連絡ください。
+    <section class="cta">
+      <h2 class="section-title">お問い合わせ</h2>
+      <p class="section-lead">ご相談・ご連絡は専用ページにまとめています。詳細はお問い合わせページをご覧ください。</p>
+      <p style="text-align:center;">
+        <a class="card-link" href="contact.html">お問い合わせページへ</a>
       </p>
-      <div class="contact">
-        <span>太良映画監督 川浪秀之</span>
-        <a href="tel:08069938219">080-6993-8219</a>
-        <a href="mailto:Kawanami.h@gmail.com">Kawanami.h@gmail.com</a>
-      </div>
-      <div class="cta-grid">
-        <div class="social-panel">
-          <h3>SNS</h3>
-          <p>最新情報の発信や今後の活動紹介に向けて、SNS導線も設置しています。</p>
-          <div class="social-links">
-            <a class="social-link" href="#" aria-label="Facebook">Facebook</a>
-            <a class="social-link" href="#" aria-label="X">X</a>
-            <a class="social-link" href="#" aria-label="Instagram">Instagram</a>
-          </div>
-          <p class="social-note">SNSリンク先は仮設定です。公開前に公式アカウントURLへ差し替えてください。</p>
-        </div>
-        <div class="form-panel">
-          <h3>お問い合わせフォーム</h3>
-          <p>このフォームは送信時にメールソフトを開きます。内容確認後、そのまま送信できます。</p>
-          <form class="contact-form" id="contact-form">
-            <label>
-              お名前
-              <input type="text" name="name" autocomplete="name" required>
-            </label>
-            <label>
-              会社名・団体名
-              <input type="text" name="company" autocomplete="organization">
-            </label>
-            <label>
-              メールアドレス
-              <input type="email" name="email" autocomplete="email" required>
-            </label>
-            <label>
-              お問い合わせ内容
-              <textarea name="message" required></textarea>
-            </label>
-            <button type="submit">メールで問い合わせる</button>
-          </form>
-          <p class="form-note">メール送信先: Kawanami.h@gmail.com</p>
-        </div>
-      </div>
       <p class="footnote">本ページは、2026年3月23日時点の説明資料をもとに構成した掲載用ドラフトです。</p>
     </section>
   </div>
-  <script>
-    const form = document.getElementById("contact-form");
-    if (form) {
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const formData = new FormData(form);
-        const name = formData.get("name") || "";
-        const company = formData.get("company") || "";
-        const email = formData.get("email") || "";
-        const message = formData.get("message") || "";
-        const subject = encodeURIComponent("太良リモートワークセンターへのお問い合わせ");
-        const body = encodeURIComponent(
-          "お名前: " + name + "\n" +
-          "会社名・団体名: " + company + "\n" +
-          "メールアドレス: " + email + "\n\n" +
-          "お問い合わせ内容:\n" + message
-        );
-        window.location.href = "mailto:Kawanami.h@gmail.com?subject=" + subject + "&body=" + body;
-      });
-    }
-  </script>
 </body>
 </html>
