@@ -28,10 +28,7 @@
       margin: 0;
       color: var(--ink);
       font-family: "BIZ UDPGothic", "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(255, 171, 99, 0.14), transparent 24%),
-        radial-gradient(circle at left 20%, rgba(125, 195, 77, 0.10), transparent 24%),
-        linear-gradient(180deg, #ffffff 0%, #fffdfa 100%);
+      background: #ffffff;
     }
 
     a {
@@ -50,20 +47,18 @@
     .pillars article,
     .service-item,
     .note {
-      background: var(--paper);
-      border: 1px solid rgba(216, 208, 191, 0.9);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      backdrop-filter: none;
     }
 
     .hero {
       padding: 36px;
-      border-radius: 32px;
+      border-radius: 0;
       overflow: hidden;
       position: relative;
-      background:
-        radial-gradient(circle at top center, rgba(125, 195, 77, 0.12), transparent 34%),
-        linear-gradient(180deg, #fffefa 0%, #fff8f2 100%);
+      background: transparent;
       color: var(--ink);
     }
 
@@ -138,13 +133,7 @@
     }
 
     .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -80px -80px auto;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 171, 99, 0.16), transparent 66%);
+      content: none;
     }
 
     .eyebrow {
@@ -208,9 +197,9 @@
     .stat {
       padding: 18px 18px 16px;
       border-radius: 20px;
-      background: #fffdfa;
-      border: 1px solid #f4e3d7;
-      box-shadow: 0 10px 24px rgba(242, 122, 45, 0.08);
+      background: transparent;
+      border: 0;
+      box-shadow: none;
     }
 
     .stat strong {
@@ -333,9 +322,7 @@
     }
 
     .service-item {
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 252, 247, 0.96)),
-        var(--paper);
+      background: transparent;
     }
 
     .service-item small {
@@ -402,8 +389,8 @@
     .flow-step {
       padding: 18px;
       border-radius: 22px;
-      background: linear-gradient(180deg, #fffef9 0%, #fff7ef 100%);
-      border: 1px solid var(--line);
+      background: transparent;
+      border: 0;
       text-align: center;
     }
 
@@ -418,11 +405,10 @@
     .cta {
       margin-top: 18px;
       padding: 28px;
-      border-radius: 28px;
-      background:
-        linear-gradient(135deg, #fff5ec 0%, #f7fbe9 100%);
+      border-radius: 0;
+      background: transparent;
       color: var(--ink);
-      box-shadow: 0 18px 40px rgba(242, 122, 45, 0.10);
+      box-shadow: none;
     }
 
     .cta p {
@@ -456,9 +442,9 @@
     .social-panel,
     .form-panel {
       padding: 20px;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid #f2e3d8;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
       text-align: center;
     }
 
@@ -571,7 +557,7 @@
       .service-item,
       .note,
       .cta {
-        border-radius: 22px;
+        border-radius: 0;
       }
 
       .brandbar {

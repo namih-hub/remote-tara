@@ -24,10 +24,7 @@
       margin: 0;
       color: var(--ink);
       font-family: "BIZ UDPGothic", "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(255, 171, 99, 0.14), transparent 24%),
-        radial-gradient(circle at left 20%, rgba(125, 195, 77, 0.10), transparent 24%),
-        linear-gradient(180deg, #ffffff 0%, #fffdfa 100%);
+      background: #ffffff;
     }
 
     a { color: inherit; }
@@ -41,33 +38,23 @@
     .hero,
     .card,
     .cta {
-      background: var(--paper);
-      border: 1px solid rgba(216, 208, 191, 0.9);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      backdrop-filter: none;
     }
 
     .hero {
       padding: 36px;
-      border-radius: 32px;
+      border-radius: 0;
       overflow: hidden;
       position: relative;
-      background:
-        radial-gradient(circle at top center, rgba(125, 195, 77, 0.12), transparent 34%),
-        linear-gradient(180deg, #fffefa 0%, #fff8f2 100%);
+      background: transparent;
       color: var(--ink);
       text-align: center;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -80px -80px auto;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 171, 99, 0.16), transparent 66%);
-    }
+    .hero::after { content: none; }
 
     .brandbar {
       position: relative;
@@ -185,12 +172,12 @@
     .card,
     .social-panel,
     .form-panel {
-      border-radius: 26px;
+      border-radius: 0;
       padding: 24px;
       text-align: center;
-      background: var(--paper);
-      border: 1px solid rgba(216, 208, 191, 0.9);
-      box-shadow: var(--shadow);
+      background: transparent;
+      border: 0;
+      box-shadow: none;
     }
 
     .section-title {
@@ -319,7 +306,7 @@
       .card,
       .social-panel,
       .form-panel {
-        border-radius: 22px;
+        border-radius: 0;
         padding: 20px;
       }
 
