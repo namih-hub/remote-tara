@@ -79,6 +79,27 @@
       text-align: center;
     }
 
+    .global-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    .global-nav a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--sea-deep);
+      border: 1px solid #f5dccd;
+      background: #fff5ed;
+      box-shadow: 0 6px 16px rgba(242, 122, 45, 0.08);
+    }
+
     .brand {
       display: inline-flex;
       flex-direction: column;
@@ -114,24 +135,6 @@
       font-size: 12px;
       letter-spacing: 0.14em;
       color: #91ab71;
-    }
-
-    .brand-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .brand-nav a {
-      padding: 9px 14px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--sea-deep);
-      border: 1px solid #f5dccd;
-      background: #fff5ed;
     }
 
     .hero::after {
@@ -566,11 +569,11 @@
         text-align: center;
       }
 
-      .brand-nav {
+      .global-nav {
         width: 100%;
       }
 
-      .brand-nav a,
+      .global-nav a,
       .social-link,
       .contact-form button {
         width: 100%;
@@ -597,6 +600,12 @@
   <div class="wrap">
     <header class="hero">
       <div class="brandbar">
+        <nav class="global-nav" aria-label="グローバルメニュー">
+          <a href="index.html">トップ</a>
+          <a href="company.html">発注企業の皆さまへ</a>
+          <a href="remote-workers.html">リモートワークを希望する方へ</a>
+          <a href="#contact">お問い合わせ</a>
+        </nav>
         <a class="brand" href="#top">
           <img class="brand-mark" src="logo.jpg" alt="太良リモートワークセンターのロゴ">
           <span class="brand-copy">
@@ -604,11 +613,6 @@
             <span>TARA REMOTE WORK CENTER</span>
           </span>
         </a>
-        <nav class="brand-nav" aria-label="ページ内リンク">
-          <a href="#services">業務内容</a>
-          <a href="#vision">構想</a>
-          <a href="#contact">お問い合わせ</a>
-        </nav>
       </div>
       <div class="hero-grid">
         <div>
