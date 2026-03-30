@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>太良リモートワークセンター | 佐賀県太良町から企業の業務を支援</title>
+  <title>太良リモートワークセンター | 佐賀県太良町から都市部企業の仕事を支援</title>
   <style>
     :root {
-      --bg: #f6f2ea;
-      --paper: rgba(255, 252, 247, 0.92);
-      --ink: #21312b;
-      --muted: #57665e;
-      --line: #d8d0bf;
-      --sea: #215a63;
-      --sea-deep: #163c44;
-      --sun: #d97a2b;
-      --leaf: #5f7d4d;
-      --sand: #efe3d0;
-      --accent-soft: #dcebed;
-      --shadow: 0 18px 40px rgba(22, 60, 68, 0.12);
+      --bg: #ffffff;
+      --paper: #fffdfa;
+      --ink: #4f443d;
+      --muted: #7b6f67;
+      --line: #f2ddd0;
+      --sea: #ff9447;
+      --sea-deep: #f27a2d;
+      --sun: #ffab63;
+      --leaf: #7dc34d;
+      --sand: #fff2e6;
+      --accent-soft: #f5faea;
+      --shadow: 0 18px 40px rgba(242, 122, 45, 0.10);
     }
 
     * {
@@ -29,9 +29,9 @@
       color: var(--ink);
       font-family: "BIZ UDPGothic", "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(217, 122, 43, 0.14), transparent 28%),
-        radial-gradient(circle at left 20%, rgba(33, 90, 99, 0.12), transparent 26%),
-        linear-gradient(180deg, #f9f5ee 0%, var(--bg) 100%);
+        radial-gradient(circle at top right, rgba(255, 171, 99, 0.14), transparent 24%),
+        radial-gradient(circle at left 20%, rgba(125, 195, 77, 0.10), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #fffdfa 100%);
     }
 
     a {
@@ -62,8 +62,76 @@
       overflow: hidden;
       position: relative;
       background:
-        linear-gradient(135deg, rgba(22, 60, 68, 0.96) 0%, rgba(33, 90, 99, 0.96) 52%, rgba(95, 125, 77, 0.95) 100%);
-      color: #f6f6f1;
+        radial-gradient(circle at top center, rgba(125, 195, 77, 0.12), transparent 34%),
+        linear-gradient(180deg, #fffefa 0%, #fff8f2 100%);
+      color: var(--ink);
+    }
+
+    .brandbar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand-mark {
+      width: 170px;
+      height: 170px;
+      border-radius: 36px;
+      object-fit: cover;
+      background: #ffffff;
+      border: 1px solid rgba(242, 122, 45, 0.16);
+      box-shadow: 0 18px 36px rgba(242, 122, 45, 0.14);
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 4px;
+    }
+
+    .brand-copy strong {
+      font-size: 38px;
+      line-height: 1.2;
+      letter-spacing: 0.04em;
+      color: var(--sea-deep);
+    }
+
+    .brand-copy span {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      color: #91ab71;
+    }
+
+    .brand-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .brand-nav a {
+      padding: 9px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--sea-deep);
+      border: 1px solid #f5dccd;
+      background: #fff5ed;
     }
 
     .hero::after {
@@ -73,7 +141,7 @@
       width: 280px;
       height: 280px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 244, 226, 0.24), transparent 66%);
+      background: radial-gradient(circle, rgba(255, 171, 99, 0.16), transparent 66%);
     }
 
     .eyebrow {
@@ -82,11 +150,12 @@
       gap: 8px;
       padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #f4ddcf;
+      background: #fff4ea;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.08em;
+      color: var(--sea-deep);
     }
 
     h1, h2, h3, p {
@@ -95,50 +164,57 @@
 
     h1 {
       margin-top: 18px;
-      font-size: clamp(32px, 5vw, 58px);
+      font-size: clamp(24px, 3.6vw, 40px);
       line-height: 1.08;
       letter-spacing: 0.04em;
+      text-align: center;
+      color: var(--sea-deep);
     }
 
     .hero-grid {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
+      grid-template-columns: 1fr;
       gap: 24px;
-      align-items: end;
+      justify-items: center;
+      text-align: center;
     }
 
     .lead {
       margin-top: 16px;
-      max-width: 720px;
+      max-width: 760px;
       line-height: 1.9;
       font-size: 16px;
-      color: rgba(246, 246, 241, 0.92);
+      color: var(--muted);
     }
 
     .hero-meta {
       margin-top: 18px;
       font-size: 13px;
-      color: rgba(242, 245, 240, 0.8);
+      color: #a68f81;
     }
 
     .hero-side {
       display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
+      width: 100%;
     }
 
     .stat {
       padding: 18px 18px 16px;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: #fffdfa;
+      border: 1px solid #f4e3d7;
+      box-shadow: 0 10px 24px rgba(242, 122, 45, 0.08);
     }
 
     .stat strong {
       display: block;
       font-size: 28px;
       line-height: 1.1;
+      color: var(--sea-deep);
     }
 
     .stat span {
@@ -146,7 +222,7 @@
       margin-top: 8px;
       font-size: 13px;
       line-height: 1.7;
-      color: rgba(246, 246, 241, 0.9);
+      color: var(--muted);
     }
 
     section {
@@ -254,11 +330,18 @@
     }
 
     .service-item small {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--sun);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      color: #ffffff;
+      background: var(--leaf);
       font-weight: 700;
       letter-spacing: 0.05em;
+      box-shadow: 0 8px 16px rgba(125, 195, 77, 0.22);
     }
 
     .audience {
@@ -287,6 +370,19 @@
       font-weight: 700;
     }
 
+    .card-link {
+      display: inline-flex;
+      margin-top: 16px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, #ffab63 0%, #7dc34d 100%);
+      box-shadow: 0 10px 20px rgba(242, 122, 45, 0.14);
+    }
+
     .flow {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -296,7 +392,7 @@
     .flow-step {
       padding: 18px;
       border-radius: 22px;
-      background: linear-gradient(180deg, #fffdf8 0%, #f3eee4 100%);
+      background: linear-gradient(180deg, #fffef9 0%, #fff7ef 100%);
       border: 1px solid var(--line);
     }
 
@@ -313,15 +409,15 @@
       padding: 28px;
       border-radius: 28px;
       background:
-        linear-gradient(135deg, rgba(217, 122, 43, 0.92) 0%, rgba(181, 98, 25, 0.94) 100%);
-      color: #fff8ef;
-      box-shadow: 0 18px 40px rgba(181, 98, 25, 0.16);
+        linear-gradient(135deg, #fff5ec 0%, #f7fbe9 100%);
+      color: var(--ink);
+      box-shadow: 0 18px 40px rgba(242, 122, 45, 0.10);
     }
 
     .cta p {
       margin-top: 10px;
       line-height: 1.85;
-      color: rgba(255, 248, 239, 0.92);
+      color: var(--muted);
     }
 
     .contact {
@@ -335,13 +431,100 @@
 
     .contact a {
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 248, 239, 0.38);
+      border-bottom: 1px solid rgba(242, 122, 45, 0.28);
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 20px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    .social-panel,
+    .form-panel {
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #f2e3d8;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 120px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #ffab63 0%, #7dc34d 100%);
+      box-shadow: 0 10px 20px rgba(242, 122, 45, 0.16);
+    }
+
+    .social-note,
+    .form-note {
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #9a8a80;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--sea-deep);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .contact-form textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 18px;
+      font: inherit;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, #ffab63 0%, #f27a2d 100%);
+      cursor: pointer;
     }
 
     .footnote {
       margin-top: 14px;
       font-size: 12px;
-      color: rgba(255, 248, 239, 0.82);
+      color: #9a8a80;
     }
 
     @media (max-width: 980px) {
@@ -351,7 +534,8 @@
       .pillars,
       .service-list,
       .audience,
-      .flow {
+      .flow,
+      .cta-grid {
         grid-template-columns: 1fr;
       }
 
@@ -377,6 +561,21 @@
         border-radius: 22px;
       }
 
+      .brandbar {
+        align-items: center;
+        text-align: center;
+      }
+
+      .brand-nav {
+        width: 100%;
+      }
+
+      .brand-nav a,
+      .social-link,
+      .contact-form button {
+        width: 100%;
+      }
+
       .hero,
       .panel,
       .card,
@@ -397,34 +596,48 @@
 <body>
   <div class="wrap">
     <header class="hero">
+      <div class="brandbar">
+        <a class="brand" href="#top">
+          <img class="brand-mark" src="logo.jpg" alt="太良リモートワークセンターのロゴ">
+          <span class="brand-copy">
+            <strong>太良リモートワークセンター</strong>
+            <span>TARA REMOTE WORK CENTER</span>
+          </span>
+        </a>
+        <nav class="brand-nav" aria-label="ページ内リンク">
+          <a href="#services">業務内容</a>
+          <a href="#vision">構想</a>
+          <a href="#contact">お問い合わせ</a>
+        </nav>
+      </div>
       <div class="hero-grid">
         <div>
           <div class="eyebrow">SAGA TARA REMOTE WORK CENTER</div>
-          <h1>太良町から、都市部企業の仕事を支える。</h1>
+          <h1>佐賀県太良町から、都市部企業の仕事を支えます。</h1>
           <p class="lead">
-            太良リモートワークセンター（仮称）は、首都圏・関西・福岡企業の業務を、佐賀県太良町から支援する構想です。
+            太良リモートワークセンターは、首都圏・関西・福岡企業の業務を、佐賀県太良町から支援する団体です。
             地方の人材と都市部の仕事をつなぎ、安心して発注できる業務体制と、太良町で働き続けられる選択肢の両立を目指します。
           </p>
-          <p class="hero-meta">説明資料作成日: 2026年3月23日 / 発案・連絡先: 太良映画監督 川浪秀之</p>
+          <p class="hero-meta">作成日: 2026年3月23日 / 運営責任者: 太良映画監督 川浪秀之</p>
         </div>
         <div class="hero-side">
           <div class="stat">
             <strong>企業支援</strong>
-            <span>データ入力、資料整理、EC支援、SNS運用、コンテンツ制作補助などを想定しています。</span>
+            <span>データ入力、資料作成、画像加工、デザイン制作、ホームページ制作・更新、SNS運用、EC運営支援など</span>
           </div>
           <div class="stat">
             <strong>地域就業</strong>
-            <span>農漁業従事者、主婦、学生、既存リモートワーカーが働き方を広げられる仕組みを目指します。</span>
+            <span>農漁業従事者、主婦、学生などが、太良町で生活をしながら企業の仕事を支援する仕組みを作っています。</span>
           </div>
           <div class="stat">
-            <strong>構想段階</strong>
-            <span>登録者あたり月2万円規模のワーク提供を一つの目安に、継続案件の仕組み化を検討しています。</span>
+            <strong>業務規模</strong>
+            <span>企業様にとっても安価で依頼しやすい料金体系で支援をいたします。（画像作成5000円～など）</span>
           </div>
         </div>
       </div>
     </header>
 
-    <section>
+    <section id="vision">
       <div class="grid-2">
         <article class="panel">
           <span class="kicker">MISSION</span>
@@ -450,7 +663,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="services">
       <h2 class="section-title">提供できる業務</h2>
       <p class="section-lead">
         企業ごとに必要な業務を切り出し、必要なときに必要な分だけ依頼できる体制を想定しています。
@@ -495,22 +708,14 @@
         <article class="card">
           <span class="kicker">FOR COMPANY</span>
           <h3>発注企業のみなさまへ</h3>
-          <ul>
-            <li>人手不足や作業の偏りを解消したい</li>
-            <li>都市部品質を保ちながらコストを抑えたい</li>
-            <li>繁閑に合わせて必要な分だけ外部発注したい</li>
-            <li>地方雇用の創出につながる取り組みを進めたい</li>
-          </ul>
+          <p>企業向けの支援内容、業務例、料金イメージ、特典案などをまとめた専用ページをご覧いただけます。</p>
+          <a class="card-link" href="company.html">企業向けページを見る</a>
         </article>
         <article class="card">
           <span class="kicker">FOR LOCAL PEOPLE</span>
-          <h3>太良町で働く人・これから働きたい人へ</h3>
-          <ul>
-            <li>農漁業の繁閑に合わせて収入源を広げたい方</li>
-            <li>子育てと両立できる働き方を探している方</li>
-            <li>大学生・専門学校生の仕事機会を増やしたい方</li>
-            <li>すでにリモートワークをしている町外の方で、太良への移住や滞在に関心がある方</li>
-          </ul>
+          <h3>リモートワークを希望する方へ</h3>
+          <p>働き方のイメージ、向いている方、太良町で働くメリットなどをまとめた専用ページをご覧いただけます。</p>
+          <a class="card-link" href="remote-workers.html">希望者向けページを見る</a>
         </article>
       </div>
     </section>
@@ -576,7 +781,7 @@
         </article>
         <article class="flow-step">
           <strong>STEP 3</strong>
-          <p>継続発注の仕組みをつくり、登録者あたり月2万円規模の仕事提供を一つの目標として育てます。</p>
+          <p>継続発注の仕組みをつくり、登録者が安定して働ける仕事の流れを育てていきます。</p>
         </article>
       </div>
     </section>
@@ -599,7 +804,7 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section class="cta" id="contact">
       <h2>お問い合わせ・ご相談</h2>
       <p>
         太良リモートワークセンター構想に関するご相談、企業連携のご提案、地域での協力体制についてのお問い合わせは、
@@ -610,8 +815,65 @@
         <a href="tel:08069938219">080-6993-8219</a>
         <a href="mailto:Kawanami.h@gmail.com">Kawanami.h@gmail.com</a>
       </div>
+      <div class="cta-grid">
+        <div class="social-panel">
+          <h3>SNS</h3>
+          <p>最新情報の発信や今後の活動紹介に向けて、SNS導線も設置しています。</p>
+          <div class="social-links">
+            <a class="social-link" href="#" aria-label="Facebook">Facebook</a>
+            <a class="social-link" href="#" aria-label="X">X</a>
+            <a class="social-link" href="#" aria-label="Instagram">Instagram</a>
+          </div>
+          <p class="social-note">SNSリンク先は仮設定です。公開前に公式アカウントURLへ差し替えてください。</p>
+        </div>
+        <div class="form-panel">
+          <h3>お問い合わせフォーム</h3>
+          <p>このフォームは送信時にメールソフトを開きます。内容確認後、そのまま送信できます。</p>
+          <form class="contact-form" id="contact-form">
+            <label>
+              お名前
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>
+              会社名・団体名
+              <input type="text" name="company" autocomplete="organization">
+            </label>
+            <label>
+              メールアドレス
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>
+              お問い合わせ内容
+              <textarea name="message" required></textarea>
+            </label>
+            <button type="submit">メールで問い合わせる</button>
+          </form>
+          <p class="form-note">メール送信先: Kawanami.h@gmail.com</p>
+        </div>
+      </div>
       <p class="footnote">本ページは、2026年3月23日時点の説明資料をもとに構成した掲載用ドラフトです。</p>
     </section>
   </div>
+  <script>
+    const form = document.getElementById("contact-form");
+    if (form) {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const name = formData.get("name") || "";
+        const company = formData.get("company") || "";
+        const email = formData.get("email") || "";
+        const message = formData.get("message") || "";
+        const subject = encodeURIComponent("太良リモートワークセンターへのお問い合わせ");
+        const body = encodeURIComponent(
+          "お名前: " + name + "\n" +
+          "会社名・団体名: " + company + "\n" +
+          "メールアドレス: " + email + "\n\n" +
+          "お問い合わせ内容:\n" + message
+        );
+        window.location.href = "mailto:Kawanami.h@gmail.com?subject=" + subject + "&body=" + body;
+      });
+    }
+  </script>
 </body>
 </html>

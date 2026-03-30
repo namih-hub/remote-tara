@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>発注企業のみなさまへ | 太良リモートワークセンター</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --paper: #fffdfa;
+      --ink: #4f443d;
+      --muted: #7b6f67;
+      --line: #f2ddd0;
+      --orange: #f27a2d;
+      --green: #7dc34d;
+      --soft-orange: #fff5ec;
+      --soft-green: #f7fbe9;
+      --shadow: 0 18px 36px rgba(242, 122, 45, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "BIZ UDPGothic", "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(255, 171, 99, 0.14), transparent 22%),
+        linear-gradient(180deg, #ffffff 0%, #fffdfa 100%);
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+
+    .hero,
+    .card,
+    .cta {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 34px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, rgba(125, 195, 77, 0.12), transparent 34%),
+        linear-gradient(180deg, #fffefa 0%, #fff7ef 100%);
+    }
+
+    .hero img {
+      width: 136px;
+      height: 136px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: 0 16px 34px rgba(242, 122, 45, 0.14);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--soft-orange);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.2;
+      color: var(--orange);
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 16px auto 0;
+      line-height: 1.9;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-top: 18px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    section { margin-top: 18px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .card h2,
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--orange);
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .cta {
+      padding: 28px;
+      background: linear-gradient(135deg, var(--soft-orange) 0%, var(--soft-green) 100%);
+    }
+
+    .cta p {
+      margin-top: 10px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 14px;
+      font-weight: 700;
+    }
+
+    .contact a {
+      text-decoration: none;
+      border-bottom: 1px solid rgba(242, 122, 45, 0.28);
+    }
+
+    @media (max-width: 860px) {
+      .grid,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <img src="logo.jpg" alt="太良リモートワークセンターのロゴ">
+      <div class="eyebrow">FOR COMPANY</div>
+      <h1>発注企業のみなさまへ</h1>
+      <p class="lead">
+        太良リモートワークセンターは、都市部企業の業務を佐賀県太良町から支援する団体です。
+        必要な業務を必要な分だけ依頼しやすい体制を目指し、コストと品質の両立を支えます。
+      </p>
+      <a class="back-link" href="index.html">トップページへ戻る</a>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2>こんな企業様に向いています</h2>
+        <ul>
+          <li>人手不足や作業の偏りを解消したい</li>
+          <li>都市部品質を保ちながらコストを抑えたい</li>
+          <li>繁閑に合わせて必要な分だけ外部発注したい</li>
+          <li>地方雇用の創出につながる取り組みを進めたい</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>提供できる業務</h2>
+        <ul>
+          <li>データ入力・資料整理</li>
+          <li>コンテンツ制作補助</li>
+          <li>EC業務支援</li>
+          <li>SNS運用サポート</li>
+          <li>デザイン・クリエイティブ</li>
+          <li>ホームページ制作・更新</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="grid-3">
+      <article class="card">
+        <h3>首都圏品質 × 地方コスト</h3>
+        <p>都市部よりコストを抑えながら、品質保証を意識した体制づくりを目指しています。</p>
+      </article>
+      <article class="card">
+        <h3>柔軟に依頼できる</h3>
+        <p>必要な時期に必要な業務だけを依頼しやすい、扱いやすい窓口を想定しています。</p>
+      </article>
+      <article class="card">
+        <h3>レビューと納期管理</h3>
+        <p>ディレクションとレビュー体制を備え、継続的に信頼を積み上げる運営を目指します。</p>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>料金イメージ</h2>
+        <p>企業様にとっても安価で依頼しやすい料金体系で支援をいたします。（画像作成5000円～など）</p>
+      </article>
+      <article class="card">
+        <h2>発注企業様への特典案</h2>
+        <ul>
+          <li>年間契約企業様へ、太良みかん・竹崎カニ・牡蠣・海苔などの特産品を季節ごとにお届け</li>
+          <li>特産品を社員価格で購入できる仕組み</li>
+          <li>太良町の旅館・宿泊施設の割引利用</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cta">
+      <h2>お問い合わせ・ご相談</h2>
+      <p>企業連携のご提案や業務依頼のご相談は、下記までお気軽にご連絡ください。</p>
+      <div class="contact">
+        <span>太良映画監督 川浪秀之</span>
+        <a href="tel:08069938219">080-6993-8219</a>
+        <a href="mailto:Kawanami.h@gmail.com">Kawanami.h@gmail.com</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
