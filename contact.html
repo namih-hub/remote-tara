@@ -78,6 +78,24 @@
       margin-bottom: 8px;
     }
 
+    .menu-button {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid #f5dccd;
+      background: #fff5ed;
+      color: var(--sea-deep);
+      cursor: pointer;
+    }
+
+    .menu-button svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
     .global-nav a {
       padding: 10px 16px;
       border-radius: 999px;
@@ -323,8 +341,30 @@
         padding: 20px;
       }
 
+      .brand {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .brand-home {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .menu-button {
+        display: inline-flex;
+      }
+
       .global-nav {
+        display: none;
         width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 8px;
+      }
+
+      .global-nav.is-open {
+        display: flex;
       }
 
       .global-nav a,
@@ -363,6 +403,9 @@
             </a>
           </div>
         </div>
+        <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+        </button>
         <nav class="global-nav" aria-label="グローバルメニュー">
           <a href="index.html">トップ</a>
           <a href="company.html">発注企業の皆さまへ</a>
@@ -424,6 +467,15 @@
     </section>
   </div>
   <script>
+    const menuButton = document.querySelector(".menu-button");
+    const globalNav = document.querySelector(".global-nav");
+    if (menuButton && globalNav) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = globalNav.classList.toggle("is-open");
+        menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    }
+
     const form = document.getElementById("contact-form");
     if (form) {
       form.addEventListener("submit", (event) => {
