@@ -397,6 +397,32 @@
       min-height: 100%;
     }
 
+    .audience .card.company-card {
+      background: var(--leaf);
+      border-color: var(--leaf);
+      color: #ffffff;
+    }
+
+    .audience .card.local-card {
+      background: #f18d00;
+      border-color: #f18d00;
+      color: #ffffff;
+    }
+
+    .audience .card.company-card h3,
+    .audience .card.local-card h3,
+    .audience .card.company-card p,
+    .audience .card.local-card p {
+      color: #ffffff;
+    }
+
+    .audience .card.company-card .kicker,
+    .audience .card.local-card .kicker {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
     .badge-row {
       display: flex;
       flex-wrap: wrap;
@@ -425,6 +451,13 @@
       color: #ffffff;
       background: #7dc34d;
       box-shadow: none;
+    }
+
+    .audience .card.company-card .card-link,
+    .audience .card.local-card .card-link {
+      background: #ffffff;
+      color: var(--ink);
+      border: 1px solid rgba(255, 255, 255, 0.85);
     }
 
     .flow {
@@ -814,17 +847,17 @@
 
     <section>
       <div class="audience">
-        <article class="card">
-          <span class="kicker">FOR COMPANY</span>
-          <h3>発注企業のみなさまへ</h3>
-          <p>企業向けの支援内容、業務例、料金イメージ、特典案などをまとめた専用ページをご覧いただけます。</p>
-          <a class="card-link" href="company.html">企業向けページを見る</a>
-        </article>
-        <article class="card">
-          <span class="kicker">FOR LOCAL PEOPLE</span>
-          <h3>リモートワークを希望する方へ</h3>
-          <p>働き方のイメージ、向いている方、太良町で働くメリットなどをまとめた専用ページをご覧いただけます。</p>
-          <a class="card-link" href="remote-workers.html">希望者向けページを見る</a>
+          <article class="card company-card">
+            <span class="kicker">FOR COMPANY</span>
+            <h3>発注企業のみなさまへ</h3>
+            <p>企業向けの支援内容、業務例、料金イメージ、特典案などをまとめた専用ページをご覧いただけます。</p>
+            <a class="card-link" href="company.html">企業向けページを見る</a>
+          </article>
+          <article class="card local-card">
+            <span class="kicker">FOR LOCAL PEOPLE</span>
+            <h3>リモートワークを希望する方へ</h3>
+            <p>働き方のイメージ、向いている方、太良町で働くメリットなどをまとめた専用ページをご覧いただけます。</p>
+            <a class="card-link" href="remote-workers.html">希望者向けページを見る</a>
         </article>
       </div>
     </section>
